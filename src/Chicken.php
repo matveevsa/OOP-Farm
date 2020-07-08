@@ -23,8 +23,8 @@ class Chicken
 
     public function getSupply()
     {
-        $egg = rand(0, 1);
+        $eggs = rand(0, 1);
 
-        return $egg;
+        return $eggs;
     }
 }

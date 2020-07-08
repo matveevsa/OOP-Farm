@@ -9,7 +9,7 @@ class Farm
     public function __construct($animal, $count = 1)
     {
         for ($i = 0; $i < $count; $i += 1) {
-            $this->stable[] = new $animal($i + 1);
+            $this->stable[] = new $animal($i);
         }
     }
 
@@ -18,8 +18,11 @@ class Farm
         return $this->stable;
     }
 
-    public function getCountSupply()
+    public function getAllSupply()
     {
-        //
+        return array_reduce($this->stable, function ($acc, $animal) {
+            $acc += $animal->getSupply();
+            return $acc;
+        }, 0);
     }
 }
