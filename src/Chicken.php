@@ -21,9 +21,9 @@ class Chicken
         return 'Co Co Co!';
     }
 
-    public function getSupply()
+    public function getSupply($min = 0, $max = 1)
     {
-        $eggs = rand(0, 1);
+        $eggs = rand($min, $max);
 
         return $eggs;
     }

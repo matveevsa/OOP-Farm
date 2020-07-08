@@ -21,10 +21,10 @@ class Cow
         return 'Mooooo!';
     }
 
-    public function getSupply()
+    public function getSupply($min = 8, $max = 12)
     {
-        $egg = rand(8, 12);
+        $milk = rand($min, $max);
 
-        return $egg;
+        return $milk;
     }
 }
